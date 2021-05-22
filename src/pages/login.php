@@ -21,23 +21,36 @@
     else:
 ?>
 
-<section>
+<section class="register">
     <form action="" method="post" class="login">
-        <div>
+        <table>
             <?php
             if(isset($_GET["erreur"])):
             ?>
             <h2><?= $_GET["erreur"] ?></h2>
             <?php endif; ?>
-            <label>login:</label>
-            <input type="text" name="login" required placeholder="Entrez votre login">
-            <label>Mot de passe:</label>
-            <input type="password" name="password" required placeholder="Entrez votre mot de passe">
-            <input type="submit" value="Se connecter">
-        </div>
+                <thead>
+                    <tr>
+                        <th colspan="2">Connectez-vous</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Login</td>
+                        <td><input type="text" name="login" required placeholder="Entrez votre login"></td>
+                    </tr>
+                    <tr>
+                        <td>Mot de passe:</td>
+                        <td><input type="password" name="password" required placeholder="Entrez votre mot de passe"></td>
+                    </tr>
+                    <tr>
+                       <td><input type="submit" value="Se connecter"></tr></td>
+                </tbody>
+        </table>
     </form>
 </section>
 
 <?php 
     endif; 
+    require "../../src/common/footer.php";
     ?>
