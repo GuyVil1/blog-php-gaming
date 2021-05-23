@@ -9,13 +9,30 @@
     if($_SESSION["user"]["role"] != "admin"):
         header("location: ../../index.php");
     endif;
+    // Gérer la variable du contenu dynamique
+    $choixMenu = "adminContenu";
 ?>
 
-<section class="categorieArticle">
-    <h2 class="ta-c mt-5">Listes des catégories existantes</h2>
-    <div class="gestionCategorie">
-        <?php
-            require "../../src/pages/adminInclude/hardCategorie.php";
-        ?>
+<section class="gestionAdmin mb-5 p-3">
+    <div class="template p-2">
+        <div class="menu mt-5">
+            <a href="../../src/pages/admin.php?choix=listeCategorie">Gérer les catégories</a>
+            <a href="../../src/pages/admin.php?choix=listeuser">Gérer les users</a>
+            <a href="../../src/pages/admin.php?choix=listecommentaire">Gérer les commentaires</a>
+            <a href="../../src/pages/admin.php?choix=listearticle">Gérer les articles</a>  
+        </div>
+        <div class="<?=$choixMenu?>">
+            <?php
+                // Quand l'admin selectionne les catégories
+                if(isset($_GET["choix"]) && $_GET["choix"] == "listeCategorie"):
+                    require "../../src/pages/adminInclude/categorie/ListCategorie.php";
+                endif;
+            ?>
+
+        </div>
     </div>
 </section>
+
+<?php
+require '../../src/common/footer.php';
+?>
