@@ -44,4 +44,12 @@
         } 
         return $dossier;
     }
-    ?>
+
+    // fonction pour savoir si un user est connecté ou non
+    function estConnecté(){
+        // Si mon user est connecté, je le renvoie sur la page d'acceuil
+        if(isset($_SESSION["connecté"]) && $_SESSION["connecté"] == true):
+            header("location: ../../index.php");
+        endif;
+    }
+?>

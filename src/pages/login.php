@@ -6,10 +6,8 @@
     require '../../src/fonctions/mesFonctions.php';
     $titre = "Connectez-vous";
 
-    // Si mon user est déjà connecté, le renvoyer sur index
-    if(isset($_SESSION["connecté"]) && $_SESSION["connecté"] == true):
-        header("location: ../../index.php");
-    endif;
+    // Si mon user est connecté, je le renvoie sur la page d'acceuil
+    estConnecté();
 
     // Si le formulaire est envoyé, je lance la fonction login pour connecter mon user
     if(isset($_POST["login"]) && isset($_POST["password"])):

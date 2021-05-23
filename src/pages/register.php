@@ -5,9 +5,12 @@
     require "../../src/fonctions/dbFonction.php";
     require '../../src/fonctions/mesFonctions.php';
 
-        // Définition de la variable qui va border en rouge les input 
-        // password si ceux envoyée par le user ne correspondent pas
-        (isset($_SESSION["mdpNok"]) && $_SESSION["mdpNok"] == true) ? $mdpNok = $_SESSION["mdpNok"] : $mdpNok = false;
+    // Si mon user est connecté, je le renvoie sur la page d'acceuil
+    estConnecté();
+
+    // Définition de la variable qui va border en rouge les input 
+    // password si ceux envoyée par le user ne correspondent pas
+    (isset($_SESSION["mdpNok"]) && $_SESSION["mdpNok"] == true) ? $mdpNok = $_SESSION["mdpNok"] : $mdpNok = false;
     ?>
 
 <?php
