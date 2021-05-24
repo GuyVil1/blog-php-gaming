@@ -34,7 +34,7 @@
 // <!-- FONCTION POUR RECUPERER LA LISTE DES HARDWARE ET DES GENRE -->
 function getHard(){
     $bdd = new PDO("mysql:host=localhost;dbname=game_from_belgium;charset=utf8", "root", "");
-    $requete = $bdd->query("SELECT * FROM hardware")or die(print_r($requete->errorInfo(), TRUE));;
+    $requete = $bdd->query("SELECT * FROM hardware")or die(print_r($requete->errorInfo(), TRUE));
     $listHardware = array();
 
     while($données = $requete->fetch()){
@@ -45,7 +45,7 @@ function getHard(){
 
 function getGenre(){
     $bdd = new PDO("mysql:host=localhost;dbname=game_from_belgium;charset=utf8", "root", "");
-    $requete = $bdd->query("SELECT * FROM gamecategory")or die(print_r($requete->errorInfo(), TRUE));;
+    $requete = $bdd->query("SELECT * FROM gamecategory")or die(print_r($requete->errorInfo(), TRUE));
     $listCategorie = array();
 
     while($données = $requete->fetch()){
@@ -69,6 +69,19 @@ function addGame($jeux, $console, $genre, $dev, $edit, $release, $cover){
 function deleteGame($jeux){
     $bdd = new PDO("mysql:host=localhost;dbname=game_from_belgium;charset=utf8", "root", "");
     $requete = $bdd->prepare("DELETE FROM jeux WHERE gameId = ?");
-    $requete->execute(array($jeux))or die(print_r($requete->errorInfo(), TRUE));;
+    $requete->execute(array($jeux))or die(print_r($requete->errorInfo(), TRUE));
     $requete->closeCursor();
+}
+
+// Récupérer tous les jeux
+function getAllGame(){
+    $bdd = new PDO("mysql:host=localhost;dbname=game_from_belgium;charset=utf8", "root", "");
+    $requete = $bdd->query("SELECT * FROM jeux");
+
+    $listeGame = array();
+    while($données = $requete->fetch()){;
+        $listeGame[] = $données;
+    }
+
+    return $listeGame;
 }

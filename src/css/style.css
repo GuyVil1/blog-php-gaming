@@ -151,7 +151,8 @@ footer p{
     font-size: 1.3rem;
 }
 
-.login input[type=file]::-webkit-file-upload-button {
+.login input[type=file]::-webkit-file-upload-button,
+input[type=file]::-webkit-file-upload-button {
     border: 1px solid yellow;
     background: #FF0036;
     font-size: 1.3rem;
@@ -284,8 +285,45 @@ footer p{
     margin: auto;
 }
 
+.btnTampon{
+    color: white;
+    font-size: 1.2rem;
+    background-color: yellow;
+    display: inline-block;
+    padding: 1rem;
+    border: 1px solid black;
+    margin-top: 1rem;
+    box-shadow: 0px 10px 13px -7px #000000, 1px 2px 3px 3px rgba(0,0,0,0);
+    -webkit-text-stroke: 1px black;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+}
+
+.btnTampon:hover{
+    animation: change 3s infinite;
+}
+
+.btnTampon a{
+    text-decoration: none;
+    color: white;
+    -webkit-text-stroke: 1px black;
+}
+
 .tox-statusbar__branding{ /*fait disparaitre le branding tinymce*/
     display: none;
+}
+
+.articles p{
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+}
+
+.articles form input{
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.3rem;
 }
 
 /* AJOUTER UN JEU */
@@ -303,3 +341,4 @@ footer p{
     font-size: 1.3rem;
     margin-bottom: 1rem;
 }
+
