@@ -5,32 +5,25 @@
     require "../../src/common/template.php";
     require "../../src/fonctions/dbFonction.php";
     require '../../src/fonctions/mesFonctions.php';
+    // Gérer la variable du contenu dynamique
+    $choixMenu = "redigerArticle";
 ?>
 
 
+<section class="gestionAdmin mb-5 p-3">
+    <div class="template p-2">
+        <div class="menu mt-5">
+            <a href="../../src/pages/articles.php?choix=redigerArticle">Rediger un article</a>
+            <a href="../../src/pages/articles.php?choix=uploaderPhoto">Uploader photo</a> 
+        </div>
+        <div class="<?=$choixMenu?>">
+            <?php
+                // Quand l'admin selectionne les catégories
+                if(isset($_GET["choix"]) && $_GET["choix"] == "redigerArticle"):
+                    require "../../src/pages/articlesInclude/moduleRedaction.php";
+                endif;
+            ?>
 
-
-<!-- Formulaire de création d'article -->
-<section class="articles">
-    <form method="post" action="" enctype="multipart/form-data">
-        <p>Titre de votre article</p>
-        <input type="text" name="titre" >
-        <p>Image de référence</p>
-        <input type="file" name="fichier">
-        <p>Composez votre article</p>
-        <textarea name="contenu" id="contenu"> </textarea>
-        <input type="submit" value="Envoyez votre article">
-    </form>
+        </div>
+    </div>
 </section>
-
-<!-- Ajout du script tinymce et activer options -->
-<script>
-    tinymce.init({
-      selector: 'textarea',
-      plugins: 'a11ychecker advcode casechange formatpainter linkchecker autolink lists checklist image imagetools media mediaembed pageembed permanentpen powerpaste table advtable tinycomments tinymcespellchecker',
-      toolbar: 'a11ycheck addcomment showcomments casechange checklist code formatpainter pageembed permanentpen table',
-      toolbar_mode: 'floating',
-      tinycomments_mode: 'embedded',
-      tinycomments_author: 'Author name',
-   });
-</script>

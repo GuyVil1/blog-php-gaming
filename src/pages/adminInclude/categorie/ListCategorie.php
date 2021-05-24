@@ -1,3 +1,4 @@
+
 <h2 class="ta-c mt-5">Listes des catégories existantes</h2>
     <div class="gestionCategorie">
         <?php

@@ -17,15 +17,25 @@
     <div class="template p-2">
         <div class="menu mt-5">
             <a href="../../src/pages/admin.php?choix=listeCategorie">Gérer les catégories</a>
-            <a href="../../src/pages/admin.php?choix=listeuser">Gérer les users</a>
-            <a href="../../src/pages/admin.php?choix=listecommentaire">Gérer les commentaires</a>
-            <a href="../../src/pages/admin.php?choix=listearticle">Gérer les articles</a>  
+            <a href="../../src/pages/admin.php?choix=listeJeux">Gérer les Jeux</a>
+            <a href="../../src/pages/admin.php?choix=listeUser">Gérer les users</a>
+            <a href="../../src/pages/admin.php?choix=listeCommentaire">Gérer les commentaires</a>
+            <a href="../../src/pages/admin.php?choix=listeArticle">Gérer les articles</a>  
         </div>
         <div class="<?=$choixMenu?>">
             <?php
                 // Quand l'admin selectionne les catégories
                 if(isset($_GET["choix"]) && $_GET["choix"] == "listeCategorie"):
+                    // J'injecte les fonctions liées à la catégorie
+                    require "../fonctions/categorieDbFonctions.php";
+                    // J'injecte les modules catégorie
                     require "../../src/pages/adminInclude/categorie/ListCategorie.php";
+                endif;
+                // Quand l'admin selectionne les jeux
+                if(isset($_GET["choix"]) && $_GET["choix"] == "listeJeux"):
+                    // J'injecte les fonctions liées à la gestion des jeux
+                    require "../fonctions/gameDbFonctions.php";
+                    require "../../src/pages/adminInclude/listeJeux/listeJeux.php";
                 endif;
             ?>
 

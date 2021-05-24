@@ -259,6 +259,7 @@ footer p{
 .gestionAdmin .adminContenu table{
     border: 1px solid black;
     width: 100%;
+    margin: 1rem;
 }
 
 .gestionAdmin .adminContenu table tbody tr td{
@@ -275,4 +276,30 @@ footer p{
 
 .gestionCategorie div{
     width: 100%;
+}
+
+/* REDIGER ARTICLE */
+.redigerArticle{
+    width: 75%;
+    margin: auto;
+}
+
+.tox-statusbar__branding{ /*fait disparaitre le branding tinymce*/
+    display: none;
+}
+
+/* AJOUTER UN JEU */
+
+.addGame{
+    width: 80%;
+}
+.addGame p input{
+    width: 80%;
+    margin-bottom: 1rem;
+}
+.addGame select{
+    padding: 1rem;
+    width: 40%;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
 }

@@ -40,7 +40,7 @@
                 endif;
                 if(isset($_SESSION["user"]["role"]) && $_SESSION["user"]["role"] == "auteur" || isset($_SESSION["user"]["role"]) && $_SESSION["user"]["role"] == "admin"):    
             ?>
-                <li><a href="../../src/pages/login.php"><i class="fas fa-edit"></i>Rédiger</a></li>
+                <li><a href="../../src/pages/articles.php"><i class="fas fa-edit"></i>Rédiger</a></li>
             <?php
                 endif;
                 if(isset($_SESSION["user"]["role"]) && $_SESSION["user"]["role"] == "admin"):    

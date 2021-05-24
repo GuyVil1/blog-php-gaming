@@ -25,7 +25,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class=>
+                <tr>
                     <td>Nom de la catégorie</td>
                     <td>Supprimer</td>
                 </tr>
