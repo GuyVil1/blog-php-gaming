@@ -85,3 +85,31 @@ function getAllGame(){
 
     return $listeGame;
 }
+
+// PARTIE 6
+// rechercher un jeu par son nom
+function getGameByName($valeur){
+    $bdd = new PDO("mysql:host=localhost;dbname=game_from_belgium;charset=utf8", "root", "");
+    $requete = $bdd->prepare("SELECT * 
+                            FROM jeux
+                            WHERE nom = ?");
+    $requete->execute(array($valeur));
+
+    while($données = $requete->fetch()):
+        $jeux = $données;
+    endwhile;
+    return $jeux;
+}
+
+// rechercher une console par son nom
+    function getHardByName($valeur){
+        $bdd = new PDO("mysql:host=localhost;dbname=game_from_belgium;charset=utf8", "root", "");
+        $requete = $bdd->prepare("SELECT * 
+                            FROM hardware
+                            WHERE console = ?");
+        $requete->execute(array($valeur));
+        while($données = $requete->fetch()):
+            $listHardware = $données;
+        endwhile;
+        return $listHardware;
+    }

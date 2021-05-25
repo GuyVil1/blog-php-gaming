@@ -90,7 +90,7 @@
     function deleteGameCategorie($genre){
         $bdd = new PDO("mysql:host=localhost;dbname=game_from_belgium;charset=utf8", "root", "");
         $requete = $bdd->prepare("DELETE FROM gameCategory WHERE genre = ?");
-        $requete->execute(array($genre));
+        $requete->execute(array($genre)) or die(print_r($requete->errorInfo(), TRUE));
         $requete->closeCursor();
 
     }
@@ -99,8 +99,38 @@
     function addGameCategorie($genre){
         $bdd = new PDO("mysql:host=localhost;dbname=game_from_belgium;charset=utf8", "root", "");
         $requete = $bdd->prepare("INSERT INTO gameCategory(genre) VALUES(?)");
-        $requete->execute(array($genre));
+        $requete->execute(array($genre)) or die(print_r($requete->errorInfo(), TRUE));
         $requete->closeCursor();
     }
+
+    // PARTIE 6
+    // CHERCHER UNE CATEGORIE DE d'article PAR GENRE POUR RECUPERE L'ID
+    function getTypeArticleByName($valeur){
+        
+        $bdd = new PDO("mysql:host=localhost;dbname=game_from_belgium;charset=utf8", "root", "");
+        $requete = $bdd->prepare("SELECT * 
+                                FROM categorie
+                                WHERE nomCategorie = ?");
+        $requete->execute(array($valeur))or die(print_r($requete->errorInfo(), TRUE));
+        while($données = $requete->fetch()):
+            $categorieId = [$données["categorieId"],$données["nomCategorie"]];
+        endwhile;
+        return $categorieId;
+    }
+
+    // chercher une catégorie de jeu par son nom
+    function getGameCategorieByName($valeur){
+        $bdd = new PDO("mysql:host=localhost;dbname=game_from_belgium;charset=utf8", "root", "");
+        $requete = $bdd->prepare("SELECT * 
+                            FROM gamecategory
+                            WHERE genre = ?");
+        $requete->execute(array($valeur))or die(print_r($requete->errorInfo(), TRUE));
+        
+        while($données = $requete->fetch()):
+            $gameCategoryId = $données;
+        endwhile;
+        return $gameCategoryId;
+    }
+
 
     ?>

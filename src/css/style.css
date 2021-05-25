@@ -326,6 +326,12 @@ input[type=file]::-webkit-file-upload-button {
     font-size: 1.3rem;
 }
 
+.articles select,
+.articles select option{
+    padding: 1rem;
+    font-size: 1.3rem;
+    }
+
 /* AJOUTER UN JEU */
 
 .addGame{

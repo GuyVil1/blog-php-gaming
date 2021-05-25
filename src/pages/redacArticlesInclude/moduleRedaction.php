@@ -8,16 +8,39 @@
     $listeGenre = getGameCategorie();
     // J'encapsule type d'article
     $listeTypeArticle = getCategorie();
-    var_dump($listeTypeArticle);
 
+
+    // Traitement du formulaire de redaction quand celui-ci est envoyé
+    if(isset($_POST["titre"]) && isset($_FILES["fichier"]) && isset($_POST["jeu"]) 
+        && isset($_POST["console"]) && isset($_POST["genre"]) && isset($_POST["typeArticle"]) && isset($_POST["contenu"])):
+
+        $star = false; //Par défaut pour être sur d'envoyer une données
+        $titre = $_POST["titre"];
+        $imgUrl = $_FILES["fichier"];//traitement à effectuer dans la requete envoyerArticle
+        $content = $_POST["contenu"];//tel quel
+        $date = date('Y-m-d H:i:s');//Recuperer date du jour avec heure de l'envoi
+        $categorieId = $_POST["typeArticle"];//Récupérer gameCategorieId du jeux
+        $gameCategoryId = $_POST["genre"];//Récupérer categorie du jeu
+        $auteurID = $_SESSION["user"]["role"];//Récupère l'id de l'auteur
+        $gameId = $_POST["jeu"];// Récupérér le gameId du jeu
+        $hardId = $_POST["console"];//récupérer le hardId du jeux
+
+        //Vérifier si l'article doit aller dans les mis en avant. Cette donnée ne sera plus traitée dans la fonction
+        if(isset($_POST["star"]) && $_POST["star"] == true):
+            $star = true;
+        endif;
+
+        envoyerArticle($titre, $imgUrl, $content, $date, $categorieId, $gameCategoryId, $auteurID, $gameId, $hardId, $star);
+    endif;
 ?>
+
 <!-- Formulaire de création d'article -->
 <section class="articles">
     <form method="post" action="" enctype="multipart/form-data">
         <p>Titre de votre article</p>
-        <input type="text" name="titre" >
+        <input type="text" name="titre" required>
         <p>Image de référence</p>
-        <input type="file" name="fichier">
+        <input type="file" name="fichier" required>
         <!-- Traitement pour récupérer liste des jeux -->
         <table>
             <tr>
@@ -29,7 +52,7 @@
             </tr>
             <tr>
                 <td>
-                    <select name="jeu">
+                    <select name="jeu" required>
                         <?php 
                             for($i=0; $i < count($listedeJeu); $i++):
                         ?>
@@ -38,7 +61,7 @@
                     </select>
                 </td>
                 <td>
-                    <select name="console">
+                    <select name="console" required>
                         <?php 
                             for($i=0; $i < count($listeHard); $i++):
                         ?>
@@ -47,7 +70,7 @@
                     </select>
                 </td>
                 <td>
-                    <select name="genre">
+                    <select name="genre" required>
                         <?php 
                             for($i=0; $i < count($listeGenre); $i++):
                         ?>
@@ -56,7 +79,7 @@
                     </select>
                 </td>
                 <td>
-                    <select name="typeArticle">
+                    <select name="typeArticle" required>
                         <?php 
                             for($i=0; $i < count($listeTypeArticle); $i++):
                         ?>
@@ -71,7 +94,7 @@
         </table>
 
         <p>Composez votre article</p>
-        <textarea name="contenu" id="contenu"> </textarea>
+        <textarea name="contenu" id="contenu" required> </textarea>
         <input class="btnTampon" type="submit" value="Envoyez votre article">
     </form>
 </section>

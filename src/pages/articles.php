@@ -7,6 +7,7 @@
     require '../../src/fonctions/mesFonctions.php';
     require "../../src/fonctions/gameDbFonctions.php";
     require "../../src/fonctions/categorieDbFonctions.php";
+    require "../../src/fonctions/articlesDbFonctions.php";
     // Gérer la variable du contenu dynamique
     $choixMenu = "redigerArticle";
 ?>
