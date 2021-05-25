@@ -28,7 +28,7 @@
         if($photo["size"] <= 10000000)
         {
             // Extension autorisée pour l'upload:
-            $extensionArray = ["png", "PNG", "gif", "GIF", "jpg", "JPG", "JPEG", "jfif", "JFIF", "jpeg"];
+            $extensionArray = ["png", "PNG", "gif", "GIF", "jpg", "JPG", "JPEG", "jfif", "JFIF", "jpeg", "webp", "WEBP"];
             // récupérer toutes les infos du fichier envoyé
             $infoFichier = pathinfo($photo["name"]);
             // Je récupére l'extension du fichier qui a été envoyé

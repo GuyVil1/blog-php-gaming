@@ -25,8 +25,6 @@
         $arrayHardware = getHardByName($hardId);
         $hardId = $arrayHardware[0];
 
-        echo $titre . "/" . $traiterImage . "/" . $content . "/" . $date . "/" . $categorieId . "/" . $gameCategoryId . "/" . $auteurID . "/" . $gameId . "/" . $hardId . "/" . $star;
-
         $bdd = new PDO("mysql:host=localhost;dbname=game_from_belgium;charset=utf8", "root", "");
         $requete = $bdd->prepare("INSERT INTO articles(titre, imgUrl, content, date, categorieId, gameCategoryId, auteurId, gameId, hardId, star)
                                 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
