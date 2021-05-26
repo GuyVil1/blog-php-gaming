@@ -56,6 +56,11 @@ function getGenre(){
 
 // Ajouter un jeu
 function addGame($jeux, $console, $genre, $dev, $edit, $release, $cover){
+    // Si pas de cover existante, prendre la cover par défaut
+    if($cover == null || $cover == ""):
+        $cover = "../../src/img/cover/PS4-NO-Cover.png";
+    endif;
+
     $bdd = new PDO("mysql:host=localhost;dbname=game_from_belgium;charset=utf8", "root", "");
     $requete = $bdd->prepare("INSERT INTO jeux(nom, consoleId, gameCategoryId, developpeur, editeur, dateDeSortie, cover)
                             VALUES(?, ?, ?, ?, ?, ?, ?)")or die(print_r($requete->errorInfo(), TRUE));

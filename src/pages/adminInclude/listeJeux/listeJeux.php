@@ -47,7 +47,7 @@
                     <p><input type="text" name="developpeur" placeholder="Développeur" required></p>
                     <p><input type="text" name="editeur" placeholder="Editeur" required></p>
                     <p><input type="date" name="release" required></p>
-                    <p><input type="text" name="cover" placeholder="adresse cover" required></p>
+                    <p><input type="text" name="cover" placeholder="adresse cover"></p>
                     <p><select name="console" required>
                         <?php
                             foreach($console as $value):

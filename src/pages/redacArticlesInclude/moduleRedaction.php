@@ -52,6 +52,7 @@
             </tr>
             <tr>
                 <td>
+                <!-- Boucle pour générer un select dynamique avec liste des jeux -->
                     <select name="jeu" required>
                         <?php 
                             for($i=0; $i < count($listedeJeu); $i++):
@@ -61,6 +62,7 @@
                     </select>
                 </td>
                 <td>
+                <!-- Boucle pour générer un select dynamique avec liste des consoles -->
                     <select name="console" required>
                         <?php 
                             for($i=0; $i < count($listeHard); $i++):
@@ -70,6 +72,7 @@
                     </select>
                 </td>
                 <td>
+                <!-- Boucle pour générer un select dynamique avec liste des genre -->
                     <select name="genre" required>
                         <?php 
                             for($i=0; $i < count($listeGenre); $i++):
@@ -79,6 +82,7 @@
                     </select>
                 </td>
                 <td>
+                <!-- Boucle pour générer un select dynamique avec liste d'articles -->
                     <select name="typeArticle" required>
                         <?php 
                             for($i=0; $i < count($listeTypeArticle); $i++):

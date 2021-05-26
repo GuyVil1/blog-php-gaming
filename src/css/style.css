@@ -222,7 +222,7 @@ input[type=file]::-webkit-file-upload-button {
 
 /* ADMIN */
 .gestionAdmin .template{
-    width: 80%;
+    width: 85%;
     display: flex;
     margin: auto;
     background-color: white;
@@ -328,8 +328,8 @@ input[type=file]::-webkit-file-upload-button {
 
 .articles select,
 .articles select option{
-    padding: 1rem;
-    font-size: 1.3rem;
+    padding: 0.5rem;
+    font-size: 1.1rem;
     }
 
 /* AJOUTER UN JEU */
