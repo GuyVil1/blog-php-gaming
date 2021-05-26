@@ -39,7 +39,6 @@
         <?php
             if((isset($_GET["choix"]) && ($_GET["choix"] == "listeJeux")) && (isset($_GET["add"])  && ($_GET["add"]) == true)){
                 $console = getHard();
-                var_dump($console);
                 $genre = getGenre();
         ?>
             <form class="login addGame" action="" method="POST">

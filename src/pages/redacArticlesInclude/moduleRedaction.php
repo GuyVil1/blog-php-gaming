@@ -21,7 +21,7 @@
         $date = date('Y-m-d H:i:s');//Recuperer date du jour avec heure de l'envoi
         $categorieId = $_POST["typeArticle"];//Récupérer gameCategorieId du jeux
         $gameCategoryId = $_POST["genre"];//Récupérer categorie du jeu
-        $auteurID = $_SESSION["user"]["role"];//Récupère l'id de l'auteur
+        $auteurID = intval($_SESSION["user"]["id"]);//Récupère l'id de l'auteur
         $gameId = $_POST["jeu"];// Récupérér le gameId du jeu
         $hardId = $_POST["console"];//récupérer le hardId du jeux
 
