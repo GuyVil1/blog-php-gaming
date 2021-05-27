@@ -23,6 +23,15 @@
 
 </head>
 <body class="bgWhite"> 
-    <?php   require ("nav.php") ?>
+    <?php   
+    require ("nav.php");
+    // Je gère les message d'erreur à cet endroit, juste après le menu
+    if(isset($_GET["error"]) && $_GET["error"] == true):
+        echo "coucou";
+    ?>
+        <h2><?= $_GET["message"] ?></h2>
+    <?php
+        endif;
+    ?>
 </body>
 </html>

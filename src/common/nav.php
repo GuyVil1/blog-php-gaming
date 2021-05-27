@@ -10,7 +10,7 @@
     <div>
         <a href="../../index.php"><img src="../../src/img/site/logotest.gif" alt="Logo Site Belgium Video-Gaming"></a>
     </div>
-    <nav>
+    <nav class="navPrincipal">
         <ul>
             <li><a href="../../src/pages/index.php">PS5</a></li>
             <li><a href="">PS4</a></li>

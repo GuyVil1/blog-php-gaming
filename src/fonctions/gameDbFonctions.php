@@ -58,7 +58,7 @@ function getGenre(){
 function addGame($jeux, $console, $genre, $dev, $edit, $release, $cover){
     // Si pas de cover existante, prendre la cover par défaut
     if($cover == null || $cover == ""):
-        $cover = "../../src/img/cover/PS4-NO-Cover.png";
+        $cover = "../../src/img/cover/PS4-NO-Cover.jpg";
     endif;
 
     $bdd = new PDO("mysql:host=localhost;dbname=game_from_belgium;charset=utf8", "root", "");
