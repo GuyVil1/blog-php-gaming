@@ -11,7 +11,8 @@
                                 INNER JOIN jeux j ON j.gameId = a.gameId
                                 INNER JOIN hardware h ON h.hardId = a.hardId
                                 INNER JOIN stars s ON s.articleId = a.articleId
-                                WHERE s.articleId = a.articleId");
+                                WHERE s.articleId = a.articleId
+                                ORDER BY `starId` DESC LIMIT 3");
 
         while($données = $requete->fetch()):
             $listeOnTop[] = $données;
