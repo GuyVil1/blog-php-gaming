@@ -4,7 +4,7 @@
     function getArticleContent($id){
         $bdd = new PDO("mysql:host=localhost;dbname=game_from_belgium;charset=utf8", "root", "");
         $requete = $bdd->prepare("SELECT a.titre, a.imgUrl, a.content, a.date, c.nomCategorie, gc.genre, 
-                                        u.nom, u.prenom, j.nom, j.developpeur, j.editeur, j.dateDeSortie, j.cover, h.console 
+                                        u.nom AS auteurNom, u.prenom AS auteurPrenom, j.nom, j.developpeur, j.editeur, j.dateDeSortie, j.cover, h.console 
                                     FROM articles a
                                     INNER JOIN categorie c ON c.categorieId = a.categorieID
                                     INNER JOIN gamecategory gc ON gc.gameCategoryId = a.gameCategoryId
