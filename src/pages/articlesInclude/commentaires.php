@@ -73,9 +73,8 @@
         $listeCommentaire = getAllCommentary($articleId);
         // Faire un var_dump pour montrer la structure
         // var_dump($listeCommentaire);
-        // Redistribuer les données dans des variables lisibles:
-        // $commentaireId[] = $listeCommentaire[$i][0][0];
-    ?>
+        if($listeCommentaire != null):
+        ?>
         <div class="listCommentaire">
             <?php
         for($i = 0; $i < count($listeCommentaire); $i++):
@@ -152,6 +151,7 @@
             </div>
             <?php
         endfor;
+    endif;//If listommentaire != null
     ?>
             </div>                    
         </div>

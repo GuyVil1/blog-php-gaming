@@ -69,27 +69,13 @@
             ?> 
         </div>
         <div class="listArticle">
-            <h2>Nos derniers articles</h2>
-            <div>
-                <img src="../../src/img/article/1621947158jpg.jpg"  style="width: 100%" alt="">
-                <h2 style="color: white"><a href="#">titre de l'article</a></h2>
-            </div>
-            <div>
-                <img src="../../src/img/article/1621947158jpg.jpg"  style="width: 100%" alt="">
-                <h2 style="color: white"><a href="#">titre de l'article</a></h2>
-            </div>
-            <div>
-                <img src="../../src/img/article/1621947158jpg.jpg"  style="width: 100%" alt="">
-                <h2 style="color: white"><a href="#">titre de l'article</a></h2>
-            </div>
-            <div>
-                <img src="../../src/img/article/1621947158jpg.jpg"  style="width: 100%" alt="">
-                <h2 style="color: white"><a href="#">titre de l'article</a></h2>
-            </div>
+            <!-- J'injecte mon module -->
+            <?php
+            require "../../src/fonctions/newsDbFonctions.php";
+                require "../../src/pages/articlesInclude/listeDerniersArticles.php";
+            ?>
         </div>
-
     </section>
-
 <?php
     require "../../src/common/footer.php";
 ?>

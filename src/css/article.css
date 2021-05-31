@@ -49,9 +49,11 @@
 .listArticle{
     flex: 2;
     background-color: #FF0036;
-    max-height: 100vh;
     border-radius: 3px;
-    box-shadow: 0px 0px 10px 3px rgb(0 0 0 / 27%)
+    box-shadow: 0px 0px 10px 3px rgb(0 0 0 / 27%);
+    height: 100%;
+    padding-bottom: 2rem;
+    margin-left: 1rem;
 }
 
 
@@ -73,6 +75,7 @@
 .listArticle div h2{
     padding: 0.5rem;
     text-align: center;
+    font-size: 1rem;
 }
 
 .listArticle div h2 a{
